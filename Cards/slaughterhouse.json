@@ -1,0 +1,17 @@
+{
+    "$schema": "../schemas/card.schema.json",
+    "id": "sausagefestmod_slaughterhouse",
+    "nameTerm": "sausagefestmod_slaughterhouse_name",
+    "descriptionTerm": "sausagefestmod_slaughterhouse_description",
+    "icon": "sausagefestmod_slaughterhouse_icon.png",
+    "value": 5,
+    "script": "SausageFestModNS.Slaughterhouse",
+    "type": "Building",
+    "_IsBuilding" : true,
+    "_HasUniquePalette": true,
+    "_MyPalette": {
+      "Color": "#F9BDAE",
+      "Color2": "#FBA08B",
+      "Icon": "#000000"
+    }
+  }

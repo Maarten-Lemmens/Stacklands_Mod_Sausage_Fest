@@ -1,0 +1,13 @@
+{
+    "$schema": "../schemas/card.schema.json",
+    "id": "sausagefestmod_cooked_blood_sausage",
+    "nameTerm": "sausagefestmod_cooked_blood_sausage_name",
+    "descriptionTerm": "sausagefestmod_cooked_blood_sausage_description",
+    "icon": "sausagefestmod_cooked_blood_sausage_icon.png",
+    "value": 4,
+    "type": "Food",
+    "script": "Food",
+    "_FoodValue": 4,
+    "_CanSpoil": false,
+    "_IsCookedFood": true
+  }

@@ -1,0 +1,14 @@
+{
+    "$schema": "../schemas/blueprint.schema.json",
+    "id": "sausagefestmod_blueprint_slaughterhouse",
+    "nameTerm": "sausagefestmod_slaughterhouse_name",
+    "group": "Building",
+    "subprints": [
+      {
+        "RequiredCards": "raw_meat, plank, iron_bar, iron_bar, builder",
+        "ResultCard": "sausagefestmod_slaughterhouse",
+        "Time": 30,
+        "StatusTerm": "sausagefestmod_idea_slaughterhouse_status"
+      }
+    ]
+  }

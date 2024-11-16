@@ -1,0 +1,19 @@
+{
+    "$schema": "../schemas/card.schema.json",
+    "id": "sausagefestmod_blood",
+    "nameTerm": "sausagefestmod_blood_name",
+    "descriptionTerm": "sausagefestmod_blood_description",
+    "icon": "sausagefestmod_blood_icon.png",
+    "value": 1,
+    "type": "Food",
+    "script": "Food",
+    "_CanSpoil": false,
+    "_IsCookedFood": false,
+    "_FoodValue": -1,
+    "_HasUniquePalette": true,
+    "_MyPalette": {
+      "Color": "#F3B176",
+      "Color2": "#FFC38D",
+      "Icon": "#000000"
+    }
+  }

@@ -1,0 +1,19 @@
+{
+    "$schema": "../schemas/card.schema.json",
+    "id": "sausagefestmod_organ_meat",
+    "nameTerm": "sausagefestmod_organ_meat_name",
+    "descriptionTerm": "sausagefestmod_organ_meat_description",
+    "icon": "sausagefestmod_organ_meat_icon.png",
+    "value": 2,
+    "type": "Food",
+    "script": "Food",
+    "_CanSpoil": false,
+    "_IsCookedFood": false,
+    "_FoodValue": -1,
+    "_HasUniquePalette": true,
+    "_MyPalette": {
+      "Color": "#F3B176",
+      "Color2": "#FFC38D",
+      "Icon": "#000000"
+    }
+  }

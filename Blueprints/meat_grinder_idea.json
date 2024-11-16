@@ -1,0 +1,14 @@
+{
+    "$schema": "../schemas/blueprint.schema.json",
+    "id": "sausagefestmod_blueprint_meat_grinder",
+    "nameTerm": "sausagefestmod_meat_grinder_name",
+    "group": "Building",
+    "subprints": [
+        {
+          "RequiredCards": "sausagefestmod_organ_meat, sausagefestmod_blood, plank, iron_bar, iron_bar, builder",
+          "ResultCard": "sausagefestmod_meat_grinder",
+          "Time": 30,
+          "StatusTerm": "sausagefestmod_idea_meat_grinder_status"
+        }
+      ]
+  }

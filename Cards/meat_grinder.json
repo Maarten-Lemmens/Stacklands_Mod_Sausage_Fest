@@ -1,0 +1,17 @@
+{
+    "$schema": "../schemas/card.schema.json",
+    "id": "sausagefestmod_meat_grinder",
+    "nameTerm": "sausagefestmod_meat_grinder_name",
+    "descriptionTerm": "sausagefestmod_meat_grinder_description",
+    "icon": "sausagefestmod_meat_grinder_icon.png",
+    "value": 5,
+    "script": "SausageFestModNS.MeatGrinder",
+    "type": "Building",
+    "_IsBuilding" : true,
+    "_HasUniquePalette": true,
+    "_MyPalette": {
+      "Color": "#F9BDAE",
+      "Color2": "#FBA08B",
+      "Icon": "#000000"
+    }
+  }

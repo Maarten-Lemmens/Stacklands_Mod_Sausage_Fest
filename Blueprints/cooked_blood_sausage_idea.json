@@ -1,0 +1,14 @@
+{
+    "$schema": "../schemas/blueprint.schema.json",
+    "id": "sausagefestmod_blueprint_cooked_blood_sausage",
+    "nameTerm": "sausagefestmod_cooked_blood_sausage_name",
+    "group": "Cooking",
+    "subprints": [
+        {
+          "RequiredCards": "campfire, sausagefestmod_raw_blood_sausage",
+          "ResultCard": "sausagefestmod_cooked_blood_sausage",
+          "Time": 60,
+          "StatusTerm": "sausagefestmod_idea_cooked_blood_sausage_status"
+        }
+      ]
+  }
