@@ -5,8 +5,8 @@
     "descriptionTerm": "sausagefestmod_meat_grinder_description",
     "icon": "sausagefestmod_meat_grinder_icon.png",
     "value": 5,
-    "script": "SausageFestModNS.MeatGrinder",
-    "type": "Building",
+    "script": "SausageFestModNS.SausageFestMeatGrinder",
+    "type": "Structures",
     "_IsBuilding" : true,
     "_HasUniquePalette": true,
     "_MyPalette": {

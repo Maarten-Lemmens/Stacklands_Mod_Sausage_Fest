@@ -5,8 +5,8 @@
     "descriptionTerm": "sausagefestmod_slaughterhouse_description",
     "icon": "sausagefestmod_slaughterhouse_icon.png",
     "value": 5,
-    "script": "SausageFestModNS.Slaughterhouse",
-    "type": "Building",
+    "script": "SausageFestModNS.SausageFestSlaughterhouse",
+    "type": "Structures",
     "_IsBuilding" : true,
     "_HasUniquePalette": true,
     "_MyPalette": {

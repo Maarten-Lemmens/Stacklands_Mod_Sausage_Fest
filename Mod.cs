@@ -12,14 +12,18 @@ namespace SausageFestModNS
         public override void Ready()
         {
             Logger.Log("Ready!");
+
         }
     }
 
-	public class Slaughterhouse : CardData
+/*
+* Had to rename SlaughterHouse into SausageFestSlaugtherhous to make a distinction with the default Stacklands 'Butchery' (which is actually called SlaughterHouse already in the Stacklands implementation...)
+*/
+	public class SausageFestSlaughterhouse : SlaughterHouse
 	{
-		public float SlaughterinTime = 30f;
+		//public float SlaughterinTime = 30f;
 		public override bool DetermineCanHaveCardsWhenIsRoot => true;
-
+				
 		public override bool CanHaveCardsWhileHasStatus()
 		{
 			return true;
@@ -29,8 +33,7 @@ namespace SausageFestModNS
 		protected override bool CanHaveCard(CardData otherCard)
 		{
 			int num = GetChildCount() + (1 + otherCard.GetChildCount());
-			//if (otherCard.Id == "cow")
-			if (otherCard is Animal)
+			if (otherCard.Id == "cow")
 			{
 				return num <= 5;
 			}
@@ -42,17 +45,17 @@ namespace SausageFestModNS
 		{
 			if (MyGameCard.HasChild && MyGameCard.Child.CardData is Animal)
 			{
-				MyGameCard.StartTimer(SlaughterinTime, SlaughterAnimal, SokLoc.Translate("sausagefestmod_action_slaughtering_status"), GetActionId("SlaughterAnimal"));
+				MyGameCard.StartTimer(30f, SlaughteringAnimal, SokLoc.Translate("sausagefestmod_action_slaughtering_status"), GetActionId("SlaughteringAnimal"));
 			}
 			else
 			{
-				MyGameCard.CancelTimer(GetActionId("SlaughterAnimal"));
+				MyGameCard.CancelTimer(GetActionId("SlaughteringAnimal"));
 			}
-			base.UpdateCard();
+			//base.UpdateCard();
 		}
 
-		[TimedAction("slaughter_animal")]
-		public void SlaughterAnimal()
+		[TimedAction("slaughtering_animal")]
+		public void SlaughteringAnimal()
 		{
 			if (MyGameCard.HasChild && MyGameCard.Child.CardData is Animal)
 			{
@@ -64,29 +67,18 @@ namespace SausageFestModNS
 				WorldManager.instance.StackSendCheckTarget(MyGameCard, cardData.MyGameCard, OutputDir);
 				// Organ meat
 				cardData = WorldManager.instance.CreateCard(base.transform.position, "sausagefestmod_organ_meat", checkAddToStack: false);
-				WorldManager.instance.StackSendCheckTarget(MyGameCard, cardData.MyGameCard, OutputDir);
+				WorldManager.instance.StackSendCheckTarget(MyGameCard, cardData.MyGameCard, OutputDir); // required to make organ meat auto-stack if there is a card in the vicinity.
 				// Blood
 				cardData = WorldManager.instance.CreateCard(base.transform.position, "sausagefestmod_blood", checkAddToStack: false);
-				WorldManager.instance.StackSendCheckTarget(MyGameCard, cardData.MyGameCard, OutputDir);
+				WorldManager.instance.StackSendCheckTarget(MyGameCard, cardData.MyGameCard, OutputDir); // required to make blood auto-stack if there is a card in the vicinity.
 
 				WorldManager.instance.CreateSmoke(base.transform.position);
 			}
 		}
-		
-		/*
-		public void CompleteMaking()
-		{
-			MyGameCard.GetRootCard().CardData.DestroyChildrenMatchingPredicateAndRestack((CardData c) => c.Id == "cow", 1);
-			CardData cardData = WorldManager.instance.CreateCard(base.transform.position, "raw_meat", checkAddToStack: false);
-			cardData = WorldManager.instance.CreateCard(base.transform.position, "sausagefestmod_organ_meat", checkAddToStack: false);
-			cardData = WorldManager.instance.CreateCard(base.transform.position, "sausagefestmod_blood", checkAddToStack: false);
-			WorldManager.instance.StackSendCheckTarget(MyGameCard, cardData.MyGameCard, OutputDir, MyGameCard);
-		}
-		*/
 	}
 
 
-	public class MeatGrinder : CardData
+	public class SausageFestMeatGrinder : CardData
 	{
 		public float MeatGrindingTime = 30f;
 		//private int MeatGrindingType = 0; // 0 = regular sausage   1 = blood sausage
