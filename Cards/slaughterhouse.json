@@ -13,5 +13,17 @@
       "Color": "#F9BDAE",
       "Color2": "#FBA08B",
       "Icon": "#000000"
-    }
+    },
+    "_EnergyConnectors": [
+        {
+          "EnergyConnectionType": "input",
+          "EnergyConnectionStrength": 5,
+          "EnergyConnectionAmount": 3
+        },
+        {
+          "EnergyConnectionType": "output",
+          "EnergyConnectionStrength": 5,
+          "EnergyConnectionAmount": 1
+        }
+    ]
   }
