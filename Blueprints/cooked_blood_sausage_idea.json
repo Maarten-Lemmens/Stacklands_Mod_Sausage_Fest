@@ -3,11 +3,18 @@
     "id": "sausagefestmod_blueprint_cooked_blood_sausage",
     "nameTerm": "sausagefestmod_cooked_blood_sausage_name",
     "group": "Cooking",
+    "needsExactMatch": false,
     "subprints": [
         {
           "RequiredCards": "campfire, sausagefestmod_raw_blood_sausage",
           "ResultCard": "sausagefestmod_cooked_blood_sausage",
-          "Time": 60,
+          "Time": 90,
+          "StatusTerm": "sausagefestmod_idea_cooked_blood_sausage_status"
+        },
+        {
+          "RequiredCards": "stove, sausagefestmod_raw_blood_sausage",
+          "ResultCard": "sausagefestmod_cooked_blood_sausage",
+          "Time": 27,
           "StatusTerm": "sausagefestmod_idea_cooked_blood_sausage_status"
         }
       ]

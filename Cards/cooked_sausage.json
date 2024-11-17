@@ -4,10 +4,10 @@
     "nameTerm": "sausagefestmod_cooked_sausage_name",
     "descriptionTerm": "sausagefestmod_cooked_sausage_description",
     "icon": "sausagefestmod_cooked_sausage_icon.png",
-    "value": 3,
+    "value": 4,
     "type": "Food",
     "script": "Food",
-    "_FoodValue": 3,
+    "_FoodValue": 4,
     "_CanSpoil": false,
     "_IsCookedFood": true
   }

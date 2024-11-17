@@ -3,12 +3,13 @@
     "id": "sausagefestmod_blueprint_raw_sausage",
     "nameTerm": "sausagefestmod_raw_sausage_name",
     "group": "Cooking",
+    "needsExactMatch": false,
     "subprints": [
         {
           "RequiredCards": "sausagefestmod_meat_grinder, sausagefestmod_organ_meat",
-          "ResultCard": "sausagefestmod_raw_sausage",
+          "ExtraResultCards": "sausagefestmod_raw_sausage",
           "Time": 10,
-          "StatusTerm": "sausagefestmod_idea_raw_sausage_status"
+          "StatusTerm": "sausagefestmod_raw_sausage_status"
         }
       ]
   }

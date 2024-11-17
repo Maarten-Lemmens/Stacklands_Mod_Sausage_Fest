@@ -3,12 +3,13 @@
     "id": "sausagefestmod_blueprint_raw_blood_sausage",
     "nameTerm": "sausagefestmod_raw_blood_sausage_name",
     "group": "Cooking",
+    "needsExactMatch": false,
     "subprints": [
         {
           "RequiredCards": "sausagefestmod_meat_grinder, sausagefestmod_organ_meat, sausagefestmod_blood",
-          "ResultCard": "sausagefestmod_raw_blood_sausage",
+          "ExtraResultCards": "sausagefestmod_raw_blood_sausage",
           "Time": 10,
-          "StatusTerm": "sausagefestmod_idea_raw_blood_sausage_status"
+          "StatusTerm": "sausagefestmod_raw_blood_sausage_status"
         }
       ]
   }
