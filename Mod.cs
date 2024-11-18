@@ -7,20 +7,17 @@ namespace SausageFestModNS
 {
     public class SausageFestMod : Mod
     {
-        
-
         public override void Ready()
         {
             Logger.Log("Ready!");
         }
     }
 
-/*
-* Had to rename SlaughterHouse into SausageFestSlaugtherhous to make a distinction with the default Stacklands 'Butchery' (which is actually called SlaughterHouse already in the Stacklands implementation...)
-*/
+	/*
+	* Had to rename SlaughterHouse into SausageFestSlaugtherhous to make a distinction with the default Stacklands 'Butchery' (which is actually called SlaughterHouse already in the Stacklands implementation...)
+	*/
 	public class SausageFestSlaughterhouse : SlaughterHouse
 	{
-		//public float SlaughterinTime = 30f;
 		public override bool DetermineCanHaveCardsWhenIsRoot => true;
 				
 		public override bool CanHaveCardsWhileHasStatus()
@@ -78,8 +75,6 @@ namespace SausageFestModNS
 
 	public class SausageFestMeatGrinder : CardData
 	{
-		public float MeatGrindingTime = 30f;
-		
 		// this method decides whether a card should stack onto this one
 		protected override bool CanHaveCard(CardData otherCard)
 		{
