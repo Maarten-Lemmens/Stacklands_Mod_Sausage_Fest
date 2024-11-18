@@ -9,7 +9,13 @@ namespace SausageFestModNS
     {
         public override void Ready()
         {
-            Logger.Log("Ready!");
+            WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedBuildingIdea, "sausagefestmod_blueprint_slaughterhouse", 1);
+			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedBuildingIdea, "sausagefestmod_blueprint_meat_grinder", 1);
+			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_cooked_sausage", 1);
+			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_cooked_blood_sausage", 1);
+			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_raw_sausage", 1);
+			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_raw_blood_sausage", 1);
+			Logger.Log("SausageFestMod is now ready!");
         }
     }
 
