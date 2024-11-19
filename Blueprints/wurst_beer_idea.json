@@ -1,0 +1,15 @@
+{
+    "$schema": "../schemas/blueprint.schema.json",
+    "id": "sausagefestmod_blueprint_wurst_beer",
+    "nameTerm": "sausagefestmod_wurst_beer_name",
+    "group": "Cooking",
+    "needsExactMatch": false,
+    "subprints": [
+        {
+          "RequiredCards": "sausagefestmod_cooked_sausage, rock, stone",
+          "ResultCard": "sausagefestmod_wurst_beer",
+          "Time": 5,
+          "StatusTerm": "sausagefestmod_idea_wurst_beer_status"
+        }
+      ]
+  }

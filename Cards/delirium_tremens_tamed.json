@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemas/card.schema.json",
+  "id": "sausagefestmod_delirium_tremens_tamed",
+  "NameTerm": "sausagefestmod_delirium_tremens_tamed_name",
+  "descriptionTerm": "sausagefestmod_delirium_tremens_description",
+  "type": "Mobs",
+  "icon": "sausagefestmod_delirium_tremens_icon.png",
+  "value": -1,
+  "script": "SausageFestModNS.DeliriumTremensTamed",
+  "_CustomName": null,
+  "_BaseCombatStats": {
+    "MaxHealth": 150,
+    "AttackDamage": 3,
+    "AttackSpeed": 2,
+    "Defence": 4,
+    "HitChance": 0.9,
+    "SpecialHits": []
+  },
+  "_HasUniquePalette": true,
+  "_MyPalette": {
+    "Color": "#F4767A",
+    "Color2": "#739CD5",
+    "Icon": "#000000"
+  }
+}
