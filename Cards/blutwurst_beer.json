@@ -1,0 +1,14 @@
+{
+    "$schema": "../schemas/card.schema.json",
+    "id": "sausagefestmod_blutwurst_beer",
+    "nameTerm": "sausagefestmod_blutwurst_beer_name",
+    "descriptionTerm": "sausagefestmod_blutwurst_beer_description",
+    "icon": "sausagefestmod_blutwurst_beer_icon.png",
+    "value": 10,
+    "type": "Food",
+    "script": "SausageFestModNS.SausageFestWurstBeer",
+    "_FoodValue": 9,
+    "_CanSpoil": false,
+    "_IsCookedFood": true,
+    "_CanBePlacedOnVillager": true
+  }
