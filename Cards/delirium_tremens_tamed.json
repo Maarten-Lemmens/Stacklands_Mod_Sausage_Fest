@@ -3,7 +3,7 @@
   "id": "sausagefestmod_delirium_tremens_tamed",
   "NameTerm": "sausagefestmod_delirium_tremens_tamed_name",
   "descriptionTerm": "sausagefestmod_delirium_tremens_description",
-  "type": "Mobs",
+  "type": "Humans",
   "icon": "sausagefestmod_delirium_tremens_icon.png",
   "value": -1,
   "script": "SausageFestModNS.DeliriumTremensTamed",
