@@ -1,0 +1,15 @@
+{
+    "$schema": "../schemas/blueprint.schema.json",
+    "id": "sausagefestmod_blueprint_potion_healing",
+    "nameTerm": "sausagefestmod_potion_healing_name",
+    "group": "Cooking",
+    "needsExactMatch": false,
+    "subprints": [
+        {
+          "RequiredCards": "empty_bottle, apple, sausagefestmod_blood",
+          "ExtraResultCards": "sausagefestmod_potion_healing",
+          "Time": 10,
+          "StatusTerm": "sausagefestmod_idea_potion_healing_status"
+        }
+      ]
+  }

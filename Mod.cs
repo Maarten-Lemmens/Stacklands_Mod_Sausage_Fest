@@ -17,6 +17,7 @@ namespace SausageFestModNS
 			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_raw_blood_sausage", 1);
 			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_blutwurst_beer", 1);
 			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_wurst_beer", 1);
+			WorldManager.instance.GameDataLoader.AddCardToSetCardBag(SetCardBagType.AdvancedFood, "sausagefestmod_blueprint_potion_healing", 1);
 			
 			Logger.Log("Thorrific's Sausage Fest is now ready! Bon appetit ;)");
         }
@@ -202,7 +203,7 @@ namespace SausageFestModNS
 		// this method decides whether a card should stack onto this one
 		protected override bool CanHaveCard(CardData otherCard)
 		{
-			if (otherCard.Id == "sausagefestmod_wurst_beer" || otherCard.Id == "sausagefestmod_blutwurst_beer")
+			if (otherCard.Id == "sausagefestmod_wurst_beer" || otherCard.Id == "sausagefestmod_blutwurst_beer" || otherCard.Id == "sausagefestmod_potion_healing")
 			{
 				return true;
 			}
@@ -319,6 +320,46 @@ namespace SausageFestModNS
 			}
 		}
 	}
+
+	public class SausageFestPotionHealing : Food
+	{
+		public override void UpdateCard()
+		{
+			if (MyGameCard.HasParent && MyGameCard.Parent.CardData is Combatable)
+			{
+				Combatable parentCardData = (Combatable)MyGameCard.Parent.CardData;
+					//MyGameCard.StartTimer(5f, DrinkingWurstBeer, SokLoc.Translate("sausagefestmod_action_drinking_wurstbeer_status"), GetActionId("DrinkingWurstBeer"));
+					//MyGameCard.Parent.CardData
+
+				// Only consume potion in case healing is required
+				if (parentCardData.HealthPoints < parentCardData.RealBaseCombatStats.MaxHealth)
+				{
+					var healthPotions = parentCardData.ChildrenMatchingPredicate(childCard => childCard.Id == "sausagefestmod_potion_healing");
+					if (healthPotions.Count > 0) // if there are any health potions on the combatable
+					{
+						int healed = 0; // create a variable to keep track of how much health gained
+						foreach (CardData healthPotion in healthPotions) // for each health potion
+						{
+							if (parentCardData.HealthPoints < parentCardData.RealBaseCombatStats.MaxHealth) // if healing still required
+							{
+								var healingPoints = Mathf.Min(parentCardData.RealBaseCombatStats.MaxHealth - parentCardData.HealthPoints, 2);
+								
+								parentCardData.HealthPoints += healingPoints; // increase health by 2
+								healed += healingPoints;
+								healthPotion.MyGameCard.DestroyCard(); // destroy health potion
+							}
+							else break;
+						}
+						AudioManager.me.PlaySound(AudioManager.me.Eat, parentCardData.Position); // play the eating sound
+						WorldManager.instance.CreateSmoke(Position); // create smoke particles
+						parentCardData.CreateHitText($"+{healed}", PrefabManager.instance.HealHitText); // create a heal text that displays how much it healed in total
+						parentCardData.UpdateCard();
+					}
+				}
+			}
+		}
+	}
+
 
 /*
 	public class VillagerDwarfScout : Villager
